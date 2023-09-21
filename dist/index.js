@@ -37,5 +37,17 @@ console.log("My result when Complement finished", ComplementResult);
 function difference(set1, set2) {
     return new Set([...set1].filter((x) => !set2.has(x)));
 }
+// input your set in function Difference of sets
 const DifferenceResult = difference(setA, setB);
 console.log("My result when i calculate difference Set finished : ", DifferenceResult);
+function cartesianProduct(set1, set2) {
+    const CartesianProduct = new Set();
+    for (const element1 of set1) {
+        for (const element2 of set2) {
+            CartesianProduct.add([element1, element2]);
+        }
+    }
+    return CartesianProduct;
+}
+const CartesianProductResult = cartesianProduct(setA, setB);
+console.log("My result when compute finished", CartesianProductResult);
