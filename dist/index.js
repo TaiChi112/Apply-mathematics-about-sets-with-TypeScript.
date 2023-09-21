@@ -3,7 +3,7 @@
 const setA = new Set([1, 2, 3, 4, 5]);
 const setB = new Set([4, 5, 6, 7, 8, 9, 0]);
 // A ∪ B = {x || x ∈ A && x ∈ B}
-//! function Union of you set
+//! function Union of you sets
 function union(set1, set2) {
     return new Set([...set1, ...set2]);
 }
@@ -11,7 +11,7 @@ function union(set1, set2) {
 const UnionResult = union(setA, setB);
 console.log("My result when union finished : ", UnionResult);
 //A ∩ B = {x || x ∈ A && x ∈ B}
-//! function Intersection of your set
+//! function Intersection of your sets
 function intersection(set1, set2) {
     return new Set([...set1].filter((x) => set2.has(x)));
 }
@@ -19,7 +19,7 @@ function intersection(set1, set2) {
 const IntersectResult = intersection(setA, setB);
 console.log("My result when intersect finished : ", IntersectResult);
 // A′ = {x || x ∈ 𝒰 && x ∉ A}
-//! function Complement of your set
+//! function Complement of your sets
 function complement(set1, set2) {
     const Complement = new Set();
     for (const element of set1) {
@@ -32,3 +32,10 @@ function complement(set1, set2) {
 // input your set in function Complement
 const ComplementResult = complement(setA, setB);
 console.log("My result when Complement finished", ComplementResult);
+//A – B = {x || x ∈ A && x ∉ B}
+//! Difference of your sets
+function difference(set1, set2) {
+    return new Set([...set1].filter((x) => !set2.has(x)));
+}
+const DifferenceResult = difference(setA, setB);
+console.log("My result when i calculate difference Set finished : ", DifferenceResult);
